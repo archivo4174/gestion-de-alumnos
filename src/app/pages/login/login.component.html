@@ -1,18 +1,18 @@
-<h2 style="text-align: center;">Iniciar Sesion </h2>
-<div class="container contenedor">
-<form  action="/index.html">
+<h2 class="animated bounceIn" style="text-align: center; ">Plataforma</h2>
+<div class="container contenedor  ">
+<form >
   <div class="imgcontainer">
-    <img src="/assets/img/logo.png" alt="Avatar" class="avatar">
+    <img src="/assets/img/logo.png" alt="Avatar" class="avatar animated bounceIn ">
   </div>
 
-  <div class="container">
-    <label for="uname"><b>Nombre de Usuario</b></label>
-    <input type="text" placeholder="Inserte Nombre de Usuario " name="uname" required>
+  <div class="container animated bounceInUp ">
+    <label for="uname"><b>Correo</b></label>
+    <input   type="text" placeholder="Inserte Correo" name="uname" required>
 
     <label for="psw"><b></b></label>
     <input type="password" placeholder="Inserte Contraseña" name="psw" required>
         
-    <button type="submit" href="index.html">Iniciar</button>
+    <button data-dismiss="modal" type="submit" [routerLink]="['maestros']">Iniciar sesion</button>
     <label>
       
     </label>
@@ -21,3 +21,7 @@
   
 </form>
   </div>
+
+
+
+

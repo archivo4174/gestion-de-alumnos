@@ -4,12 +4,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RoutingModule } from './routing/routing.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { PlataformaComponent } from './plataforma/plataforma.component';
+import { MaestosComponent } from './pages/maestos/maestos.component';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { PadresComponent } from './pages/padres/padres.component';
+import { GruposMaestrosComponent } from './pages/grupos-maestros/grupos-maestros.component';
+import { ReporteMaestrosComponent } from './pages/reporte-maestros/reporte-maestros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    PlataformaComponent,
+    MaestosComponent,
+    AlumnosComponent,
+    PadresComponent,
+    GruposMaestrosComponent,
+    ReporteMaestrosComponent
   ],
   imports: [
     BrowserModule,

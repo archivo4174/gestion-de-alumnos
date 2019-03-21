@@ -12,4 +12,12 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  redirect(){
+    window.location.href = 'https://www.educacionweb.mx/ixaya-cecytej/login_a1/'
+  }
+  redirect2(){
+    window.location.href = 'http://moodle.cecytejalisco.mx/?redirect=0'
+  }
+
 }

@@ -1,0 +1,11 @@
+
+
+.casimg{
+    width: 100px;
+}
+
+.carousel {
+    position: relative;
+    width: 60%;
+    left: 20%;
+}

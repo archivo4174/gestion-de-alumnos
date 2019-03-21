@@ -1,0 +1,21 @@
+.grupos{
+    background:  #83D684;
+    
+}
+
+
+.reporte{
+    background-color: #F57F2A;
+}
+
+
+
+#grupos a:hover {
+    background-color:  #82BD83;
+    cursor:default;
+}
+
+#reporte a:hover {
+    background-color: #E67F35; 
+    cursor:default;
+}
