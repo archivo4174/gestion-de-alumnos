@@ -1,5 +1,5 @@
 .grupos{
-    background:  #83D684;
+    background:  #468B2E;
     
 }
 
@@ -11,11 +11,11 @@
 
 
 #grupos a:hover {
-    background-color:  #82BD83;
+    background-color:  #356823;
     cursor:default;
 }
 
 #reporte a:hover {
-    background-color: #E67F35; 
+    background-color: #AB5F14; 
     cursor:default;
 }
