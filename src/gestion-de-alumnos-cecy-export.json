@@ -1,0 +1,33 @@
+{
+  "grupos":{
+    "A":{
+      "1": "jose samuel torres garcia",
+      "2": "axel alejandro del valle",
+      "3": "monica muños perez",
+      "4": "luis carlos camacho",
+      "5": "marcos espinoza"
+
+    },
+    "B":{
+      "1": "mario alberto carranza",
+      "2": "javier alejandro zoto",
+      "3": "carolina villegas salazar",
+      "4": "juan jose morronez",
+      "5": "jose chavez hernandez"
+
+    }
+  },
+
+  "usuarios" : {
+    "usuario1" : {
+      "materia" : "ingles",
+      "nombre" : "carlos",
+      "pass" : 12345
+    },
+    "usuario2" : {
+      "materia" : "tecnologia",
+      "nombre" : "ignacio",
+      "pass" : 12345
+    }
+  }
+}

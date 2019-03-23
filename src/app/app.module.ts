@@ -10,6 +10,9 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { PadresComponent } from './pages/padres/padres.component';
 import { GruposMaestrosComponent } from './pages/grupos-maestros/grupos-maestros.component';
 import { ReporteMaestrosComponent } from './pages/reporte-maestros/reporte-maestros.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -25,9 +28,10 @@ import { ReporteMaestrosComponent } from './pages/reporte-maestros/reporte-maest
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RoutingModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,103 @@
 <div class="card-header animated fadeInDown">
-  Featured
+  Grupos asignados
 </div>
 <div class="card-body animated fadeInDown">
-  <h5 class="card-title">Special title treatment</h5>
-  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Grupo A</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Grupo B</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Grupo C</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="list-group">
+        <button *ngFor="let alumnos of alumnos | async"  data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action ">{{alumnos.grupos.A}}</button>
+        </div>
+
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="list-group">
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action ">jose samuel torres garcia</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">miguel</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">maria</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">Pepe</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action" >victor</button>
+          </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="list-group">
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action ">jose samuel torres garcia</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">miguel</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">maria</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">Pepe</button>
+            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action" >victor</button>
+          </div>
+    </div>
+  </div>
 </div>
 <div class="card-footer text-muted animated fadeInDown">
-  2 days ago
+ 
+</div>
+
+<div class="imgGupoAlumnos animated bounceInLeft">
+<ul >
+   <li>
+      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
+   </li> 
+   <li>
+      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
+   </li>
+   <li>
+      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
+   </li>
+</ul>
+</div>
+
+
+
+<!-- Modal de alumnos-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">"nombre del Alumno"</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="card mb-3 animated zoomIn cartaEstudiante " style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="assets/img/julio.jpeg" class="card-img" >
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    
+                    <p>Semestre: 
+                      <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                    </p>
+                    <p>calificacion: <input type="number"> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
 </div>
