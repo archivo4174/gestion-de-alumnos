@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioFirebaseService } from 'src/app/servicio-firebase.service';
 
 @Component({
   selector: 'app-grupos-maestros',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GruposMaestrosComponent implements OnInit {
 
+  items:any;
    
-  constructor() { }
+  constructor(private conexion: ServicioFirebaseService) {
+    this.conexion.datosGrupos().subscribe(item =>{
+      this.items = item;
+      
+    })
+   }
 
   ngOnInit() {
   }

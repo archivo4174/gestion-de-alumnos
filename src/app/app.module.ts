@@ -11,8 +11,12 @@ import { PadresComponent } from './pages/padres/padres.component';
 import { GruposMaestrosComponent } from './pages/grupos-maestros/grupos-maestros.component';
 import { ReporteMaestrosComponent } from './pages/reporte-maestros/reporte-maestros.component';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { AngularFirestore } from '@angular/fire/firestore';
+
+import { ServicioFirebaseService } from './servicio-firebase.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +33,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     RoutingModule
   ],
-  providers: [AngularFirestore],
+  providers: [
+     ServicioFirebaseService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
