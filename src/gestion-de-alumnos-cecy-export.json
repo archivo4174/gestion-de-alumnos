@@ -1,33 +1,152 @@
 {
-  "grupos":{
-    "A":{
-      "1": "jose samuel torres garcia",
-      "2": "axel alejandro del valle",
-      "3": "monica muños perez",
-      "4": "luis carlos camacho",
-      "5": "marcos espinoza"
+  
 
-    },
-    "B":{
-      "1": "mario alberto carranza",
-      "2": "javier alejandro zoto",
-      "3": "carolina villegas salazar",
-      "4": "juan jose morronez",
-      "5": "jose chavez hernandez"
+  "maestros":{
+      "matutino":{
+        "1":{
+          "nombre":"karina",
+            "materia":"quimica",
+            "pass": "12345"
+        },
+        "2":{
+          "nombre":"emanuel",
+            "materia":"deportes",
+            "pass": "19756"
+        },
+        "3":{
+          "nombre":"pedro",
+            "materia":"ingles",
+            "pass": "76543"
+        }
+      },
+      "vespertino":{
+        "1":{
+          "nombre":"alberto",
+            "materia":"historia",
+            "pass": "12345"
+        },
+        "2":{
+          "nombre":"carlos",
+            "materia":"musica",
+            "pass": "19756"
+        },
+        "3":{
+          "nombre":"samuel",
+            "materia":"computacion",
+            "pass": "76543"
+        }
 
-    }
+      }
   },
 
-  "usuarios" : {
-    "usuario1" : {
-      "materia" : "ingles",
-      "nombre" : "carlos",
-      "pass" : 12345
-    },
-    "usuario2" : {
-      "materia" : "tecnologia",
-      "nombre" : "ignacio",
-      "pass" : 12345
+  "grupos":{
+    "matutiuno":{
+      "A":{
+        "1":{
+          "nombre":"jose samuel torres garcia",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "2":{
+          "nombre":"axel alejandro del valle",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "3":{
+          "nombre":"monica muños perez",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "4":{
+          "nombre":"luis carlos camacho",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "5":{
+          "nombre":"marcos espinoza",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        }
+
+      },
+      "B":{
+        "1":{
+          "nombre":"jose chavez hernandez",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "2":{
+          "nombre":"juan jose morronez",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "3":{
+          "nombre":"carolina villegas salazar",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "4":{
+          "nombre":"javier alejandro zoto",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "5":{
+          "nombre":"mario alberto carranza",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        }
+
+      }
+      
     }
+      
+    },
+    "vespertino":{
+      "A":{
+        "1":{
+          "nombre":"jose samuel torres garcia",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "2":{
+          "nombre":"axel alejandro del valle",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "3":{
+          "nombre":"monica muños perez",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "4":{
+          "nombre":"luis carlos camacho",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        },
+        "5":{
+          "nombre":"marcos espinoza",
+            "correoTutor": "example@example.com",
+            "passAlumno": "1234",
+            "passPadre": "43211"
+        }
+
+      }
+    }
+   
   }
-}
+
+

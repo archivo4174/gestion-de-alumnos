@@ -12,7 +12,7 @@ export class ServicioFirebaseService {
   item: Observable<Item[]>;
   
   constructor(private afs: AngularFirestore) { 
-    this.itemDoc = afs.collection<Item>('grupos');
+    this.itemDoc = afs.collection<Item>('gruposs');
    
   }
 

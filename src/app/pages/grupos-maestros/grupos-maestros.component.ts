@@ -13,7 +13,7 @@ export class GruposMaestrosComponent implements OnInit {
   constructor(private conexion: ServicioFirebaseService) {
     this.conexion.datosGrupos().subscribe(item =>{
       this.items = item;
-      
+      console.log(item)
     })
    }
 
