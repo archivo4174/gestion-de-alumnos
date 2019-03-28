@@ -2,28 +2,42 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { datosP } from './models/DatosPlataforma';
 
-export interface Item { name: string; }
+
 
 @Injectable()
 export class ServicioFirebaseService {
 
-  private itemDoc: AngularFirestoreCollection<Item>;
-  item: Observable<Item[]>;
-  
-  constructor(private afs: AngularFirestore) { 
-    this.itemDoc = afs.collection<Item>('gruposs');
-   
-  }
+  listaDegrupos: AngularFireList<any>;
+  selectAlumno: datosP = new datosP();
 
-  datosGrupos(){
-   
-    return this.itemDoc.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Item;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );
-  }
+  constructor(private firebase: AngularFireDatabase){}
+
+    getDatos(){
+   return   this.listaDegrupos = this.firebase.list('grupos');
+
+    }
+    istertDatos(Datos: datosP){
+      this.listaDegrupos.push({
+        nombre: Datos.nombreAlumno,
+        calificacion: Datos.calificacion,
+        correo: Datos.correoAlumno,
+        pass: Datos.pass
+      })
+    }
+
+    acualizarDatos(Datos: datosP){
+      this.listaDegrupos.update(Datos.$key,{
+        nombre: Datos.nombreAlumno,
+        calificacion: Datos.calificacion,
+        correo: Datos.correoAlumno,
+        pass: Datos.pass
+      });
+    }
+
+    deleteDatos($key: string){
+      this.listaDegrupos.remove($key)
+    }
 }

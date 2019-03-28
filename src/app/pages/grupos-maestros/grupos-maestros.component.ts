@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioFirebaseService } from 'src/app/servicio-firebase.service';
+import { datosP } from 'src/app/models/DatosPlataforma';
+import { element } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-grupos-maestros',
@@ -7,17 +9,23 @@ import { ServicioFirebaseService } from 'src/app/servicio-firebase.service';
   styleUrls: ['./grupos-maestros.component.css']
 })
 export class GruposMaestrosComponent implements OnInit {
+productList: datosP[];
 
-  items:any;
-   
-  constructor(private conexion: ServicioFirebaseService) {
-    this.conexion.datosGrupos().subscribe(item =>{
-      this.items = item;
-      console.log(item)
-    })
-   }
+  constructor(private serviciofire: ServicioFirebaseService){}
 
   ngOnInit() {
+
+    return this.serviciofire.getDatos()
+      .snapshotChanges().subscribe(item => {
+        this.productList = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          
+          x["$key"] = element.key;
+          this.productList.push(x as datosP);
+          console.log(item);
+        });
+      });
   }
 
  
