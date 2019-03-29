@@ -16,13 +16,13 @@ export class ServicioFirebaseService {
   constructor(private firebase: AngularFireDatabase){}
 
     getDatos(){
-   return   this.listaDegrupos = this.firebase.list('grupos');
+   return   this.listaDegrupos = this.firebase.list('alumnosA');
 
     }
     istertDatos(Datos: datosP){
       this.listaDegrupos.push({
         nombre: Datos.nombreAlumno,
-        calificacion: Datos.calificacion,
+        grupo: Datos.grupo,
         correo: Datos.correoAlumno,
         pass: Datos.pass
       })
@@ -31,7 +31,6 @@ export class ServicioFirebaseService {
     acualizarDatos(Datos: datosP){
       this.listaDegrupos.update(Datos.$key,{
         nombre: Datos.nombreAlumno,
-        calificacion: Datos.calificacion,
         correo: Datos.correoAlumno,
         pass: Datos.pass
       });

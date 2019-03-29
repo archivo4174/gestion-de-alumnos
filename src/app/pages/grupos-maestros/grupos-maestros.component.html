@@ -16,7 +16,7 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="list-group">
-        <button *ngFor="let alumnos of  productList "  data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action "></button>
+        <button *ngFor="let alumnos of  productList "  data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action "> <li class="alumnoimg" ><img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> </li>   {{alumnos.nombre}} <button class="btn btn-danger delete" ><i class="fas fa-user-minus"></i></button> </button>
         </div>
 
     </div>
@@ -36,23 +36,7 @@
     </div>
   </div>
 </div>
-<div class="card-footer text-muted animated fadeInDown">
- 
-</div>
 
-<div class="imgGupoAlumnos animated bounceInLeft">
-<ul >
-   <li>
-      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
-   </li> 
-   <li>
-      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
-   </li>
-   <li>
-      <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
-   </li>
-</ul>
-</div>
 
 
 

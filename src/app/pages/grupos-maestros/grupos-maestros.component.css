@@ -1,16 +1,15 @@
 
 .imgAlumno{
     width: 30px;
-    padding-bottom: 13px;
-    position: relative;
-    right: 40px;
 
 }
+.alumnoimg{
+position: fixed;
+}
 
-.imgGupoAlumnos{
-    position: relative;
-    bottom: 263px;
-    left: 37px;
-    height: 100px;
-    width: 100px;
+
+.delete{
+    position: sticky;
+    left: 1230px;
+
 }

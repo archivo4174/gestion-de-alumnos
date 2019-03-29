@@ -23,7 +23,7 @@ productList: datosP[];
           
           x["$key"] = element.key;
           this.productList.push(x as datosP);
-          console.log(item);
+         
         });
       });
   }
