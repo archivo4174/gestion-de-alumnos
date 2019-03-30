@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioFirebaseService } from 'src/app/servicio-firebase.service';
 import { NgForm } from '@angular/forms';
 import { datosP } from 'src/app/models/DatosPlataforma';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-maestos',
@@ -14,7 +15,7 @@ export class MaestosComponent implements OnInit {
 
   
 
-  constructor(private serviciofire: ServicioFirebaseService) { }
+  constructor(private serviciofire: ServicioFirebaseService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.serviciofire.getDatos();
@@ -26,9 +27,12 @@ export class MaestosComponent implements OnInit {
     this.resetForm(alumnoForm);
     
   }
+
+  
+
   resetForm(alumnoForm?: NgForm){
     if(alumnoForm != null)
-    alumnoForm.reset();
+      alumnoForm.reset();
     this.serviciofire.selectAlumno = new datosP();
   }
 

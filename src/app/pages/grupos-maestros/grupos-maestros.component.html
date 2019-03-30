@@ -16,7 +16,7 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="list-group">
-        <button *ngFor="let alumnos of  productList "  data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action "> <li class="alumnoimg" ><img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> </li>   {{alumnos.nombre}} <button class="btn btn-danger delete" ><i class="fas fa-user-minus"></i></button> </button>
+        <button *ngFor="let alumnos of  productList " type="button" class="list-group-item list-group-item-action "> <li class="alumnoimg" ><img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> <button class="btn btn-warning editar" data-toggle="modal" data-target="#editarAlumno" (click)="onEdit(alumnos)" ><i class="far fa-address-book"></i></button> </li>  <button class="btn btn-ligh" data-toggle="modal" data-target="#exampleModalCenter">{{alumnos.nombreAlumno}}</button>  <button class="btn btn-danger delete" (click)="onDelete(alumnos.$key)"> <i class="fas fa-user-minus"></i></button> </button>
         </div>
 
     </div>
@@ -27,12 +27,7 @@
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <div class="list-group">
-            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action ">jose samuel torres garcia</button>
-            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">miguel</button>
-            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">maria</button>
-            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action">Pepe</button>
-            <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="list-group-item list-group-item-action" >victor</button>
-          </div>
+            </div>
     </div>
   </div>
 </div>
@@ -78,6 +73,68 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Guardar Cambios</button>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- Modal Editar Alumno -->
+ <div class="modal fade" id="editarAlumno" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Editar Alumno <i class="fas fa-user-tag"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form #alumnoForm ="ngForm" (ngSubmit)="onUpdate()" >
+              <div class="form-row">
+                  <div class="form-group col-md-9 mb-3">
+                      <label for="validationDefault03">Nombre completo</label>
+                      <input type="text" class="form-control"  placeholder="Nombre completo" name="nombreAlumno" #nombreAlumno="ngModel"[(ngModel)]="serviciofire.selectAlumno.nombreAlumno">
+                    </div>
+                <div class="form-group col-md-7 mb-3">
+                  <label for="validationDefaultUsername">Correo</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-envelope"></i></span> 
+                    </div>
+                    <input type="email" class="form-control"  placeholder="Correo" name="correoAlumno" #correoAlumno="ngModel"[(ngModel)]="serviciofire.selectAlumno.correoAlumno">
+                  </div>
+                </div>
+                <div class="form-group col-md-5 mb-3">
+                    <label for="validationDefault03">Contraseña</label>
+                    <input type="text" class="form-control"  placeholder="Nombre completo" name="pass" #pass="ngModel"[(ngModel)]="serviciofire.selectAlumno.pass" >
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-2">
+                      <label for="inputState">Grupo</label>
+                      <select name="grupo" #grupo="ngModel"[(ngModel)]="serviciofire.selectAlumno.grupo" class="form-control">
+                          <option>A</option>
+                          <option>B</option>
+                          <option>C</option>
+                        </select>
+                    </div>
+                <div class="form-group col-md-10 mb-5">
+                  <label for="validationDefault04">Carrera</label>
+                  <select name="carrera" #carrera="ngModel"[(ngModel)]="serviciofire.selectAlumno.carrera" class="form-control">
+                      <option>soporte tecnico</option>
+                      <option>mecatronica</option>
+                      <option>enfermeria</option>
+                    </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="submit" (click)="onUpdate" class="btn btn-primary">Guardar</button>
+                  <button type="reset" class="btn btn-primary">reset</button>
+                </div>
+            </form>
+      </div>
+      
     </div>
   </div>
 </div>

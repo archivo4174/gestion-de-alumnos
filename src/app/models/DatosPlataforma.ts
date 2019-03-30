@@ -4,5 +4,6 @@ export class datosP{
     grupo: number;
     correoAlumno: string;
     pass: number;
+    carrera: string;
     
 }

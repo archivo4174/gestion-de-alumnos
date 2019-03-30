@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioFirebaseService } from 'src/app/servicio-firebase.service';
 import { datosP } from 'src/app/models/DatosPlataforma';
-import { element } from '@angular/core/src/render3';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-grupos-maestros',
@@ -11,7 +13,9 @@ import { element } from '@angular/core/src/render3';
 export class GruposMaestrosComponent implements OnInit {
 productList: datosP[];
 
-  constructor(private serviciofire: ServicioFirebaseService){}
+  key: string;
+
+  constructor(private serviciofire: ServicioFirebaseService, private toastr: ToastrService){}
 
   ngOnInit() {
 
@@ -22,12 +26,33 @@ productList: datosP[];
           let x = element.payload.toJSON();
           
           x["$key"] = element.key;
+          this.key = x["$key"];
           this.productList.push(x as datosP);
          
         });
       });
   }
+  onEdit(datosP: datosP){
+    this.serviciofire.selectAlumno = Object.assign({},datosP);
+    
+  }
+  
+  onUpdate(){
+    this.serviciofire.acualizarDatos({
+      $key: this.key,
+      nombreAlumno: this.serviciofire.selectAlumno.nombreAlumno,
+      grupo: this.serviciofire.selectAlumno.grupo,
+      correoAlumno: this.serviciofire.selectAlumno.correoAlumno,
+      pass: this.serviciofire.selectAlumno.pass,
+      carrera: this.serviciofire.selectAlumno.carrera
+    });
 
+  }
+
+  onDelete($key: string){
+    this.serviciofire.deleteDatos($key);
+    this.toastr.success('Alumno Eliminado');
+  }
  
 
 }

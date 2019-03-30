@@ -11,6 +11,7 @@
       
     </ul>
     <div class="form-inline my-2 my-lg-0">
+        <button type="button" class="btn btn-warning" style="margin-right: 15px;" data-toggle="modal" data-target="#saberMas">?</button>
         <button class="btn btn-success" style="margin-right: 15px;" data-toggle="modal" data-target="#alumno"><i class="fas fa-user-plus"></i> Agregar Alumno</button>
       <button class="btn btn-danger" [routerLink]="['']"  ><i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>
     </div>
@@ -57,7 +58,7 @@
                         <label for="validationDefault03">Nombre completo</label>
                         <input type="text" class="form-control"  placeholder="Nombre completo" name="nombreAlumno" #nombreAlumno="ngModel"[(ngModel)]="serviciofire.selectAlumno.nombreAlumno">
                       </div>
-                  <div class="form-group col-md-6 mb-3">
+                  <div class="form-group col-md-7 mb-3">
                     <label for="validationDefaultUsername">Correo</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -66,7 +67,7 @@
                       <input type="email" class="form-control"  placeholder="Correo" name="correoAlumno" #correoAlumno="ngModel"[(ngModel)]="serviciofire.selectAlumno.correoAlumno">
                     </div>
                   </div>
-                  <div class="form-group col-md-6 mb-3">
+                  <div class="form-group col-md-5 mb-3">
                       <label for="validationDefault03">Contraseña</label>
                       <input type="text" class="form-control"  placeholder="Nombre completo" name="pass" #pass="ngModel"[(ngModel)]="serviciofire.selectAlumno.pass" >
                     </div>
@@ -74,18 +75,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="inputState">Grupo</label>
-                        <input type="text" class="form-control"  placeholder="Nombre completo" name="grupo" #grupo="ngModel"[(ngModel)]="serviciofire.selectAlumno.grupo" >
+                        <select name="grupo" #grupo="ngModel"[(ngModel)]="serviciofire.selectAlumno.grupo" class="form-control">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                          </select>
                       </div>
                   <div class="form-group col-md-10 mb-5">
                     <label for="validationDefault04">Carrera</label>
-                    <select id="inputState" class="form-control">
+                    <select name="carrera" #carrera="ngModel"[(ngModel)]="serviciofire.selectAlumno.carrera" class="form-control">
                         <option>soporte tecnico</option>
                         <option>mecatronica</option>
                         <option>enfermeria</option>
                       </select>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <button type="reset" class="btn btn-primary">reset</button>
                   </div>
@@ -98,5 +103,24 @@
 
 
 
-
-
+  
+  <!-- Modal saber mas-->
+  <div class="modal fade" id="saberMas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Ayuda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

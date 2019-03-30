@@ -21,18 +21,21 @@ export class ServicioFirebaseService {
     }
     istertDatos(Datos: datosP){
       this.listaDegrupos.push({
-        nombre: Datos.nombreAlumno,
+        nombreAlumno: Datos.nombreAlumno,
         grupo: Datos.grupo,
-        correo: Datos.correoAlumno,
-        pass: Datos.pass
+        correoAlumno: Datos.correoAlumno,
+        pass: Datos.pass,
+        carrera: Datos.carrera
       })
     }
 
     acualizarDatos(Datos: datosP){
       this.listaDegrupos.update(Datos.$key,{
-        nombre: Datos.nombreAlumno,
-        correo: Datos.correoAlumno,
-        pass: Datos.pass
+        nombreAlumno: Datos.nombreAlumno,
+        grupo: Datos.grupo,
+        correoAlumno: Datos.correoAlumno,
+        pass: Datos.pass,
+        carrera: Datos.carrera
       });
     }
 

@@ -13,3 +13,16 @@ position: fixed;
     left: 1230px;
 
 }
+.editar{
+    position: relative;
+    left: 15px;
+}
+@media screen and (max-width: 480px) {
+    .imgAlumno {
+        display: none;
+    }
+    .editar{
+        position: relative;
+    left: -35px;
+    }
+}

@@ -14,6 +14,8 @@ import { ReporteMaestrosComponent } from './pages/reporte-maestros/reporte-maest
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr"
 
 
 import { ServicioFirebaseService } from './servicio-firebase.service';
@@ -35,7 +37,9 @@ import { ServicioFirebaseService } from './servicio-firebase.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
      ServicioFirebaseService
