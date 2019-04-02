@@ -28,7 +28,7 @@ productList: datosP[];
           x["$key"] = element.key;
           this.key = x["$key"];
           this.productList.push(x as datosP);
-         
+         console.log(this.productList);
         });
       });
   }

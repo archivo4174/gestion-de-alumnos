@@ -16,7 +16,15 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="list-group">
-        <button *ngFor="let alumnos of  productList " type="button" class="list-group-item list-group-item-action "> <li class="alumnoimg" ><img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> <button class="btn btn-warning editar" data-toggle="modal" data-target="#editarAlumno" (click)="onEdit(alumnos)" ><i class="far fa-address-book"></i></button> </li>  <button class="btn btn-ligh" data-toggle="modal" data-target="#exampleModalCenter">{{alumnos.nombreAlumno}}</button>  <button class="btn btn-danger delete" (click)="onDelete(alumnos.$key)"> <i class="fas fa-user-minus"></i></button> </button>
+        <button *ngFor="let alumnos of  productList " type="button" class="list-group-item list-group-item-action ">
+           <li class="alumnoimg" >
+             <img class="imgAlumno" src="assets/img/alumnnoimg.jpg"> 
+             <button class="btn btn-warning editar" data-toggle="modal" data-target="#editarAlumno" (click)="onEdit(alumnos)" >
+               <i class="far fa-address-book"></i>
+              </button> </li>  
+              <button class="btn btn-ligh" data-toggle="modal" data-target="#exampleModalCenter">{{alumnos.matutino.nombre}}</button>
+                <button class="btn btn-danger delete" (click)="onDelete(alumnos.$key)"> <i class="fas fa-user-minus"></i></button>
+               </button>
         </div>
 
     </div>

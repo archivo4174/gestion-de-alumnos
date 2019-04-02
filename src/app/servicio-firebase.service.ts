@@ -16,7 +16,7 @@ export class ServicioFirebaseService {
   constructor(private firebase: AngularFireDatabase){}
 
     getDatos(){
-   return   this.listaDegrupos = this.firebase.list('alumnosA');
+   return   this.listaDegrupos = this.firebase.list('/');
 
     }
     istertDatos(Datos: datosP){
